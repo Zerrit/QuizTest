@@ -12,4 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244e0ef672c04b7bb83697c8910bb69c, type: 3}
   m_Name: LettersBundle
   m_EditorClassIdentifier: 
-  <Cards>k__BackingField: []
+  <Cards>k__BackingField:
+  - <Id>k__BackingField: a
+    <Icon>k__BackingField: {fileID: 4963718625464178563, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: b
+    <Icon>k__BackingField: {fileID: 7783457984840754399, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: c
+    <Icon>k__BackingField: {fileID: 3234300448368640894, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: d
+    <Icon>k__BackingField: {fileID: 7911670913450602933, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: e
+    <Icon>k__BackingField: {fileID: 4652326554734856401, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: f
+    <Icon>k__BackingField: {fileID: -6426668015567183463, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: g
+    <Icon>k__BackingField: {fileID: 216406037199867053, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: h
+    <Icon>k__BackingField: {fileID: -8235857483100294123, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: i
+    <Icon>k__BackingField: {fileID: -3541686595128163680, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: j
+    <Icon>k__BackingField: {fileID: -2756605603065543306, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: k
+    <Icon>k__BackingField: {fileID: -1127063002332224934, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: l
+    <Icon>k__BackingField: {fileID: -5901097786099144959, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: m
+    <Icon>k__BackingField: {fileID: 3295844289267200183, guid: 7baed416d4868384ab04fc73252e91d5, type: 3}
+  - <Id>k__BackingField: n
+    <Icon>k__BackingField: {fileID: 7112752472869403061, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: o
+    <Icon>k__BackingField: {fileID: 0}
+  - <Id>k__BackingField: p
+    <Icon>k__BackingField: {fileID: -4252152113809563852, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: q
+    <Icon>k__BackingField: {fileID: -4447791616812998045, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: r
+    <Icon>k__BackingField: {fileID: -6342808464625005154, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: s
+    <Icon>k__BackingField: {fileID: 8083504644574312765, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: t
+    <Icon>k__BackingField: {fileID: -4461999128152558772, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: u
+    <Icon>k__BackingField: {fileID: 3270655726746431581, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: v
+    <Icon>k__BackingField: {fileID: -2983290644488427326, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: w
+    <Icon>k__BackingField: {fileID: -9165466868132007793, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: x
+    <Icon>k__BackingField: {fileID: 4461586319009975920, guid: 2d159377e6b0f604a82c5e459de68451, type: 3}
+  - <Id>k__BackingField: y
+    <Icon>k__BackingField: {fileID: -5001085640463096552, guid: b4acd5e56a6876f44a19e10c423b3217, type: 3}
+  - <Id>k__BackingField: z
+    <Icon>k__BackingField: {fileID: 3539555106843919260, guid: b4acd5e56a6876f44a19e10c423b3217, type: 3}
