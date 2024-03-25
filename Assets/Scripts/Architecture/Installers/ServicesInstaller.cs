@@ -16,7 +16,7 @@ namespace QuizTest.Architecture.Installers
 
 
         private void RegistterConfigService()
-            => Container.Bind<IConfigService>().To<ConfigService>().AsSingle();
+            => Container.Bind<IConfigService>().FromInstance(configService).AsSingle();
 
         /*private void RegisterWindowService() 
             => Container.Bind<IWindowService>().To<WindowService>().AsSingle();*/
