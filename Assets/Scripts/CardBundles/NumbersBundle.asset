@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 244e0ef672c04b7bb83697c8910bb69c, type: 3}
+  m_Name: NumbersBundle
+  m_EditorClassIdentifier: 
+  <Cards>k__BackingField:
+  - <Id>k__BackingField: 1
+    <Icon>k__BackingField: {fileID: -1122396033, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 2
+    <Icon>k__BackingField: {fileID: -1909622391, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 3
+    <Icon>k__BackingField: {fileID: 15354347, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 4
+    <Icon>k__BackingField: {fileID: 847973483, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 5
+    <Icon>k__BackingField: {fileID: -360861672, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 6
+    <Icon>k__BackingField: {fileID: -1963923200, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 7
+    <Icon>k__BackingField: {fileID: 1503673511, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 8
+    <Icon>k__BackingField: {fileID: -1163070558, guid: 9376dccd96fb4934c91f9d52efb9ad51, type: 3}
+  - <Id>k__BackingField: 9
+    <Icon>k__BackingField: {fileID: 730054576, guid: 3865c8d39ef60634dacb709ee9a0d5f2, type: 3}
+  - <Id>k__BackingField: 10
+    <Icon>k__BackingField: {fileID: 1539189805, guid: 6007b9b103a13744399469c2f38cdcc2, type: 3}
