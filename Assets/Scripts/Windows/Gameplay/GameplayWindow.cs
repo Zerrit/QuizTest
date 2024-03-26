@@ -26,7 +26,7 @@ namespace QuizTest.Windows.Gameplay
         
         private void FadeIn()
         {
-            Fade(1, 1f);
+            Fade(1, .5f);
         }
         
         private void FadeOut()

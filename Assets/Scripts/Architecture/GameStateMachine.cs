@@ -35,7 +35,7 @@ namespace QuizTest.Architecture
                 [typeof(WinState)] = _stateFactory.CreateState<WinState>(),
             };
             
-            StartMachine<PrepareState>();
+            StartMachine<GameplayState>();
         }
 
         /// <summary>

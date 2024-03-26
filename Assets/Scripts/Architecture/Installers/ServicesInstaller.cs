@@ -1,4 +1,5 @@
-﻿using QuizTest.Services;
+﻿using QuizTest.Services.Config;
+using QuizTest.Services.Window;
 using UnityEngine;
 using Zenject;
 
@@ -11,14 +12,14 @@ namespace QuizTest.Architecture.Installers
         public override void InstallBindings()
         {
             RegistterConfigService();
-            //RegisterWindowService();
+            RegisterWindowService();
         }
 
 
         private void RegistterConfigService()
             => Container.Bind<IConfigService>().FromInstance(configService).AsSingle();
 
-        /*private void RegisterWindowService() 
-            => Container.Bind<IWindowService>().To<WindowService>().AsSingle();*/
+        private void RegisterWindowService() 
+            => Container.Bind<IWindowService>().To<WindowService>().AsSingle();
     }
 }
