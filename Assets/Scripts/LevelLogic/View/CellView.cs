@@ -11,6 +11,7 @@ namespace QuizTest.LevelLogic.View
         [SerializeField] private SpriteRenderer cardSprite;
 
         public string VariantId => _cardData.Id;
+        public float CellSize => background.transform.localScale.x;
         
         private CardData _cardData;
         private Tween _cellTween;

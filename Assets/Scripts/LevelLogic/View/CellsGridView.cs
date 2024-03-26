@@ -12,7 +12,7 @@ namespace QuizTest.LevelLogic.View
         [SerializeField] private CellView cellPrefab;
         [SerializeField] private ParticleSystem successFX;
 
-        private float _cellSize = 6f; //TODO Добавить получения значения 6
+        private float _cellSize = 6f;
 
         private CellView _choosenCell;
         private ObjectPooler<CellView> _cellViewPool;
@@ -23,12 +23,15 @@ namespace QuizTest.LevelLogic.View
         [Inject]
         public void Construct(ILevelSystem levelSystem)
         {
+            Debug.LogWarning(cellPrefab.CellSize);
             _levelSystem = levelSystem;
             _cellViewPool = new ObjectPooler<CellView>(cellPrefab, transform, 9);
             _levelSystem.OnLevelModelChanged += UpdateLevelModel;
         }
 
-        
+        /// <summary>
+        /// При получении ячейки при клике сравнивает её Id с нужным и вызывает соответствующую реакцию.
+        /// </summary>
         public void OnPointerClick(PointerEventData eventData)
         {
             if (TryGetCellView(eventData, out _choosenCell))
@@ -44,19 +47,25 @@ namespace QuizTest.LevelLogic.View
             }
         }
         
-
+        /// <summary>
+        /// Обновляет информацию о текущей модели уровня.
+        /// </summary>
+        /// <param name="newLevelModel"> Новая модель. </param>
         private void UpdateLevelModel(IReadOnlyLevelModel newLevelModel)
         {
             _currentLevelModel = newLevelModel;
             RedrowGrid();
         }
 
+        /// <summary>
+        /// Пересоздаёт сетку на основе текущей модели уровня и заполняет её актуальными данными.
+        /// </summary>
         private void RedrowGrid()
         {
             _cellViewPool.ReleaseAllElements();
             
             Vector2Int gridSize = _currentLevelModel.Size;
-            Debug.LogWarning(gridSize);
+
             float totalWidth = (gridSize.x - 1) * _cellSize; 
             float totalHeight = (gridSize.y - 1) * _cellSize;  
           
@@ -78,6 +87,11 @@ namespace QuizTest.LevelLogic.View
             }
         }
 
+        /// <summary>
+        /// Пытается получить из объекта CellView.
+        /// </summary>
+        /// <param name="targetCell"> Ячейка в которую помещается результат операции. </param>
+        /// <returns> Результат поиска. </returns>
         private bool TryGetCellView(PointerEventData eventData, out CellView targetCell)
         {
             targetCell = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<CellView>();
