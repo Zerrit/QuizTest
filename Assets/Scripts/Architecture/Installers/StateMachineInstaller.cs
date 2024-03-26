@@ -20,7 +20,6 @@ namespace QuizTest.Architecture.Installers
         
         private void RegisterGameStates()
         {
-            Container.Bind<PrepareState>().AsSingle();
             Container.Bind<GameplayState>().AsSingle();
             Container.Bind<WinState>().AsSingle();
         }
