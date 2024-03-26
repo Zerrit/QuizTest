@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace QuizTest
+namespace QuizTest.LevelLogic.Data
 {
     [Serializable]
     public class LevelData

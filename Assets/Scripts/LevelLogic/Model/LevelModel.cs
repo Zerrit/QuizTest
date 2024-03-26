@@ -1,15 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using QuizTest.Cards;
 using UnityEngine;
 
-namespace QuizTest
+namespace QuizTest.LevelLogic.Model
 {
-    public interface IReadOnlyLevelModel
-    {
-        public Vector2Int Size { get; }
-        public CardData[] CardVariants { get; }
-    }
-
     public class LevelModel : IReadOnlyLevelModel
     {
         public string RightAnswerId { get; private set; }
@@ -29,8 +24,7 @@ namespace QuizTest
             for (int i = 0; i < gridSize; i++)
             {
                 int randomIndex = Random.Range(0, bundleSize - (1 + i));
-                Debug.LogWarning(i);
-                Debug.LogWarning(randomIndex);
+
                 CardVariants[i] = tempCards[randomIndex];
                 tempCards.RemoveAt(randomIndex);
             }

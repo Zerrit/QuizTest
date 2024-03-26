@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace QuizTest
+namespace QuizTest.LevelLogic.Data
 {
     [CreateAssetMenu(fileName = "NewLevelQueueData", menuName = "Level Queue Data")]
     public class LevelQueueData : ScriptableObject
