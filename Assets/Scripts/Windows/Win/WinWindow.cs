@@ -1,5 +1,5 @@
 ﻿using System;
-using Services.WindowService;
+using QuizTest.Services.Window;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

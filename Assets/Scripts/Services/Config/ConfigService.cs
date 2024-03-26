@@ -1,28 +1,32 @@
 ﻿using QuizTest.LevelLogic.Data;
-using Services.WindowService;
+using QuizTest.Services.Window;
 using UnityEngine;
 
 namespace QuizTest.Services.Config
 {
+    /// <summary>
+    /// Сервис предоставляющий доступ к данным.
+    /// </summary>
     public class ConfigService: MonoBehaviour, IConfigService
     {
         [SerializeField] private CardBundleData[] cardBundles;
         [SerializeField] private LevelQueueData levelQueueData;
         [SerializeField] private AbstractWindow[] windowInstances;
-
-        public bool GetData(out CardBundleData[] bundles)
+        
+        
+        bool IConfigService.GetData(out CardBundleData[] bundles)
         {
             bundles = cardBundles;
             return (cardBundles != null);
         }
-        
-        public bool GetData(out LevelQueueData levelsQueue)
+
+        bool IConfigService.GetData(out LevelQueueData levelsQueue)
         {
             levelsQueue = levelQueueData;
             return (levelQueueData != null);
         }
-        
-        public bool GetData(out AbstractWindow[] windows)
+
+        bool IConfigService.GetData(out AbstractWindow[] windows)
         {
             windows = windowInstances;
             return (windowInstances != null);

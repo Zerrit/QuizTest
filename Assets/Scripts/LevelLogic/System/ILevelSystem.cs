@@ -7,8 +7,9 @@ namespace QuizTest.LevelLogic.System
     {
         public event Action<IReadOnlyLevelModel> OnLevelModelChanged;
         public event Action OnLevelsOver;
-        //public IReadOnlyLevelModel GetGridModel();
-
+        
+        public bool IsStartLevel { get; }
+        
         public void Initialize();
         public void CompleteLevel();
 
