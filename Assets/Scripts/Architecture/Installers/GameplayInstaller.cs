@@ -9,17 +9,9 @@ namespace QuizTest.Architecture.Installers
         public override void InstallBindings()
         {
             RegisterLevelSystem();
-            RegisterUIControllers();
         }
-
 
         private void RegisterLevelSystem()
             => Container.BindInterfacesAndSelfTo<LevelSystem>().AsSingle();
-
-        private void RegisterUIControllers()
-        {
-            //Container.Bind<IGameplayController>().To<GameplayController>().AsSingle();
-            //Container.Bind<IWinController>().To<WinController>().AsSingle();
-        }
     }
 }

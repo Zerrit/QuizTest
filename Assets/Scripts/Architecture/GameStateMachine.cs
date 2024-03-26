@@ -30,7 +30,6 @@ namespace QuizTest.Architecture
         {
             _states = new Dictionary<Type, AbstractGameState>()
             {
-                [typeof(PrepareState)] = _stateFactory.CreateState<PrepareState>(),
                 [typeof(GameplayState)] = _stateFactory.CreateState<GameplayState>(),
                 [typeof(WinState)] = _stateFactory.CreateState<WinState>(),
             };
