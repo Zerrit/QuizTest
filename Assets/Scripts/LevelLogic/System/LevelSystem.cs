@@ -13,6 +13,8 @@ namespace QuizTest.LevelLogic.System
         public event Action<IReadOnlyLevelModel> OnLevelModelChanged;
         public event Action OnLevelsOver;
 
+        public bool IsStartLevel => _currentLevel == 0;
+
         private int _currentLevel = 0;
         private LevelModel _currentLevelModel;
         
@@ -29,15 +31,21 @@ namespace QuizTest.LevelLogic.System
             _gameplayWindow = _windowService.GetWindowByType<IGameplayWindow>("Gameplay");
         }
 
+        /// <summary>
+        /// Запускает работу системы.
+        /// </summary>
         public void Initialize()
         {
+            _currentLevelModel = new LevelModel();
             _currentLevel = 0;
             CreateNextLevel();
             
             _windowService.ShowWindow("Gameplay");
         }
-
-
+        
+        /// <summary>
+        /// Завершает уровень и пытается инициировать создание следующего.
+        /// </summary>
         public void CompleteLevel()
         {
             _currentLevel++;
@@ -48,22 +56,15 @@ namespace QuizTest.LevelLogic.System
         }
         
         
+        /// <summary>
+        /// Генерирует новую модель на основе данных из конфига.
+        /// </summary>
         private void CreateNextLevel()
         {
             int randomBundleIndex = Random.Range(0, _bundles.Length);
-            _currentLevelModel = new LevelModel(_levelsQueueData.LevelsQueue[_currentLevel].Size, _bundles[randomBundleIndex]);
+            _currentLevelModel.GenerateNewLevel(_levelsQueueData.LevelsQueue[_currentLevel].Size, _bundles[randomBundleIndex]);
             _gameplayWindow.SetTask(_currentLevelModel.RightAnswerId);
             OnLevelModelChanged?.Invoke(_currentLevelModel);
-        }
-        
-        
-        public IReadOnlyLevelModel GetGridModel() 
-            => _currentLevelModel;
-
-
-        public bool TryAnswer(string answerId)
-        {
-            return false;
         }
     }
 }

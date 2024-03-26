@@ -1,6 +1,6 @@
 ﻿using System;
 using DG.Tweening;
-using Services.WindowService;
+using QuizTest.Services.Window;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,3 +1,5 @@
+using System.Collections;
+using DG.Tweening;
 using QuizTest.LevelLogic.Model;
 using QuizTest.LevelLogic.System;
 using QuizTest.ObjectPool;
@@ -7,6 +9,9 @@ using Zenject;
 
 namespace QuizTest.LevelLogic.View
 {
+    /// <summary>
+    /// Игровая сетка с ячейками.
+    /// </summary>
     public class CellsGridView : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private CellView cellPrefab;
@@ -23,7 +28,7 @@ namespace QuizTest.LevelLogic.View
         [Inject]
         public void Construct(ILevelSystem levelSystem)
         {
-            Debug.LogWarning(cellPrefab.CellSize);
+            _cellSize = cellPrefab.CellSize;
             _levelSystem = levelSystem;
             _cellViewPool = new ObjectPooler<CellView>(cellPrefab, transform, 9);
             _levelSystem.OnLevelModelChanged += UpdateLevelModel;
@@ -54,13 +59,14 @@ namespace QuizTest.LevelLogic.View
         private void UpdateLevelModel(IReadOnlyLevelModel newLevelModel)
         {
             _currentLevelModel = newLevelModel;
-            RedrowGrid();
+            StartCoroutine(CreateCellWithAnim(_levelSystem.IsStartLevel));
         }
-
+        
         /// <summary>
-        /// Пересоздаёт сетку на основе текущей модели уровня и заполняет её актуальными данными.
+        /// Генерирует сетку и заполняет данными на основе модели уровня.
         /// </summary>
-        private void RedrowGrid()
+        /// <returns></returns>
+        private IEnumerator CreateCellWithAnim(bool withAnimation)
         {
             _cellViewPool.ReleaseAllElements();
             
@@ -82,7 +88,9 @@ namespace QuizTest.LevelLogic.View
                     CellView cellView = _cellViewPool.GetFreeElement();
                     cellView.transform.SetPositionAndRotation(cellPosition, Quaternion.identity);
                     cellView.SetCard(_currentLevelModel.CardVariants[cardIndex]);
-                    cellView.SpawnAnimation();
+                    
+                    if(withAnimation)
+                        yield return cellView.SpawnAnimation().WaitForCompletion();
                 }
             }
         }

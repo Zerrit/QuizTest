@@ -1,12 +1,23 @@
 ﻿using QuizTest.LevelLogic.Data;
-using Services.WindowService;
+using QuizTest.Services.Window;
 
 namespace QuizTest.Services.Config
 {
     public interface IConfigService
-    {
-        bool GetData(out CardBundleData[] bundles);
-        bool GetData(out LevelQueueData levelsQueue);
-        bool GetData(out AbstractWindow[] windows);
+    {      
+        /// <summary>
+        /// Возвращает массив всех наборов карточек.
+        /// </summary>
+        public bool GetData(out CardBundleData[] bundles);
+        
+        /// <summary>
+        /// Возвращает данные о списке уровней.
+        /// </summary>
+        public bool GetData(out LevelQueueData levelsQueue);
+        
+        /// <summary>
+        /// Возвращает данные об существующих окнах.
+        /// </summary>
+        public bool GetData(out AbstractWindow[] windows);
     }
 }

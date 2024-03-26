@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Services.WindowService
+namespace QuizTest.Services.Window
 {
     public abstract class AbstractWindow : MonoBehaviour
     {

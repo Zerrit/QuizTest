@@ -10,9 +10,16 @@ namespace QuizTest.LevelLogic.Model
         public string RightAnswerId { get; private set; }
         public Vector2Int Size { get; private set; }
         public CardData[] CardVariants { get; private set; }
-        
-        
-        public LevelModel(Vector2Int size, CardBundleData cardBundle)
+
+        private readonly List<string> _banPool = new List<string>();
+
+
+        /// <summary>
+        /// Генерарует данные уровня на основе полученных параметров.
+        /// </summary>
+        /// <param name="size"> Размер игровой сетки. </param>
+        /// <param name="cardBundle"> Набор карточек. </param>
+        public void GenerateNewLevel(Vector2Int size, CardBundleData cardBundle)
         {
             Size = size;
             int gridSize = size.x * size.y;
@@ -29,7 +36,10 @@ namespace QuizTest.LevelLogic.Model
                 tempCards.RemoveAt(randomIndex);
             }
 
-            RightAnswerId = CardVariants[Random.Range(0, gridSize - 1)].Id;
-        } 
+            do RightAnswerId = CardVariants[Random.Range(0, gridSize - 1)].Id;
+            while (_banPool.Contains(RightAnswerId));
+
+            _banPool.Add(RightAnswerId);
+        }
     }
 }

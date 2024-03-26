@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace QuizTest.LevelLogic.View
 {
+    /// <summary>
+    /// Отображение ячейки и её содержимого.
+    /// </summary>
     public class CellView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer background;
@@ -15,7 +18,12 @@ namespace QuizTest.LevelLogic.View
         
         private CardData _cardData;
         private Tween _cellTween;
-
+        
+        
+        /// <summary>
+        /// Устанавливает в ячейку карточку.
+        /// </summary>
+        /// <param name="cardData"> Данные установленной карточки.</param>
         public void SetCard(CardData cardData)
         {
             _cardData = cardData;
@@ -30,15 +38,23 @@ namespace QuizTest.LevelLogic.View
             }
         }
 
-        
-        
-        public void SpawnAnimation()
+        /// <summary>
+        /// Запускает анимацию появления ячейки.
+        /// </summary>
+        /// <returns> Возвращает данные о твине. </returns>
+        public Tween SpawnAnimation()
         {
             _cellTween?.Kill();
             transform.localScale = Vector3.one;
-            _cellTween = transform.DOPunchScale(new Vector3(.2f,.2f,1f), .7f, 3).SetEase(Ease.InBounce);
+            _cellTween = transform.DOPunchScale(new Vector3(.2f, .2f, 1f), .6f, 3)
+                .SetEase(Ease.InBounce);
+
+            return _cellTween;
         }
         
+        /// <summary>
+        /// Запускает анимацию неправильного выбора.
+        /// </summary>
         public void ShowFailAnimation()
         {
             _cellTween?.Kill();
@@ -46,6 +62,10 @@ namespace QuizTest.LevelLogic.View
             _cellTween = cardSprite.transform.DOPunchPosition(Vector3.right, .7f).SetEase(Ease.InBounce);
         }
 
+        /// <summary>
+        /// Запускает анимацию верного выбора.
+        /// </summary>
+        /// <param name="endAnimationCallback"> Колбэк онончания анимации</param>
         public void ShowSuссessAnimation(Action endAnimationCallback)
         {
             _cellTween?.Kill();
